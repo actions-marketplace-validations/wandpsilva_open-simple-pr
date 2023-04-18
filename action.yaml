@@ -1,0 +1,19 @@
+name: open PR
+author: Wanderlucio P Silva
+description: This action open a pull request for a specified branch
+
+inputs:
+  branch:
+    description: the branch which will receive de PR
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: gh --version
+      shell: bash
+
+
+branding:
+  icon: 'cpu'
+  color: 'green'
