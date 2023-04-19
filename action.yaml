@@ -8,14 +8,14 @@ inputs:
     required: true
 
 runs:
-  defaults:
-  run:
-    shell: bash
   using: composite
   steps:
     - run: gh --version
+      shell: bash
     - run: gh auth refresh -s wandpsilva/open-pr
+      shell: bash
     - run: gh pr create --head teste --base main --fill 
+      shell: bash
 
 
 branding:
