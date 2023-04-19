@@ -7,10 +7,10 @@ inputs:
     description: the branch which will receive de PR
     required: true
 
-defaults:
+runs:
+  defaults:
   run:
     shell: bash
-runs:
   using: composite
   steps:
     - run: gh --version
