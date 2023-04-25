@@ -15,9 +15,9 @@ runs:
       shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
-      # run: gh pr create --title "Pull request title" --body "Pull request body"
-      run: gh pr create --title "PR from ${{ github.github_ref }} to Main" --body "This PR was opened automatically" --head ${{ inputs.branch }} --base main
+      run: gh pr create --title "PR from ${{ inputs.branch }} to Main" --body "This PR was opened automatically by wandpsilva/open-pr action" --head ${{ inputs.branch }} --base main
       shell: bash
+    - run: echo '${{ github.ref_name }}'
 
 
 branding:
