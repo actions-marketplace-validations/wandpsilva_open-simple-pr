@@ -18,6 +18,7 @@ runs:
       run: gh pr create --title "PR from ${{ inputs.branch }} to Main" --body "This PR was opened automatically by wandpsilva/open-pr action" --head ${{ inputs.branch }} --base main
       shell: bash
     - run: echo '${{ github.ref_name }}'
+      shell: bash
 
 
 branding:
