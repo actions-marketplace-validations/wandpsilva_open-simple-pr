@@ -7,18 +7,23 @@ inputs:
     description: the branch which will receive de PR
     required: true
     default: teste
+  title:
+    description: title of your pull request
+    required: false
+  body:
+    description: the body of your pull request
+    required: false
 
 runs:
   using: composite
   steps:
-    - run: gh --version
-      shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
-      run: gh pr create --title "PR from ${{ inputs.branch }} to Main" --body "This PR was opened automatically by wandpsilva/open-pr action" --head ${{ inputs.branch }} --base main
+      run: gh pr create --title "PR from ${{ inputs.branch }} to main" --body "This PR was opened automatically by wandpsilva/open-pr action" --head ${{ inputs.branch }} --base main
       shell: bash
     - run: "echo this action is running on branch: ${{ github.ref_name }}"
       shell: bash
+    - run: "echo pull request open with success"
 
 
 branding:
