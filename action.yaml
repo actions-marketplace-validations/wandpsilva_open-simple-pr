@@ -6,6 +6,7 @@ inputs:
   branch:
     description: the branch which will receive de PR
     required: true
+    default: teste
 
 runs:
   using: composite
@@ -14,7 +15,8 @@ runs:
       shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
-      run: gh pr create --title "Pull request title" --body "Pull request body"
+      # run: gh pr create --title "Pull request title" --body "Pull request body"
+      run: gh pr create --title "PR from ${github.branch} to Main" --body "This PR was opened automatically" --head ${inputs.branch} --base main
       shell: bash
 
 
