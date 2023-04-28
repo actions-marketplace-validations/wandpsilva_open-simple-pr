@@ -3,18 +3,33 @@ author: Wanderlucio P Silva
 description: This action open a pull request for a specified branch
 
 inputs:
-  branch:
-    description: the branch which will receive de PR
+  branch-origin:
+    description: the branch with the code you want to merge
     required: true
+    default: teste
+  target-branch:
+    description: the branch which will receive de merge
+    required: true
+    default: main
+  title:
+    description: title of your pull request
+    required: false
+    default: "PR opened automatically from branch ${{ github.ref_name }}"
+  body:
+    description: the body of your pull request
+    required: false
+    default: "This PR was opened automatically by wandpsilva/open-pr action"
 
 runs:
   using: composite
   steps:
-    - run: gh --version
-      shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
-      run: gh pr create --title "Pull request title" --body "Pull request body"
+      run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ inputs.target-branch }}
+      shell: bash
+    - run: "echo this action is running on branch: ${{ github.ref_name }}"
+      shell: bash
+    - run: "echo pull request opened with success"
       shell: bash
 
 

@@ -3,10 +3,16 @@ name: Run
 on: workflow_dispatch
 
 jobs:
-  run:
+  open-pr:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: execute
         uses: ./
+        with:
+          branch-origin: "teste"
+          target-branch: "main"
+          title: "my custom title"
+          body: "my custom body"
