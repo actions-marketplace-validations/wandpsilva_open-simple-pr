@@ -6,15 +6,18 @@ This is a simple action to create a pull request.
 
 ## `branch`
 
-**Required** The branch target for the pull request.
+**Required** 
+The branch target for the pull request.
 
 ## `title`
 
-**Required** The title of the pull request.
+**Optional** 
+The title of the pull request.
 
 ## `body`
 
-**Required** The body of the pull request.
+**Optional** 
+The body of the pull request.
 
 
 ## Example usage
