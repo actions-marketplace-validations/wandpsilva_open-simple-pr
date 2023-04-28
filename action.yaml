@@ -14,7 +14,7 @@ inputs:
   title:
     description: title of your pull request
     required: false
-    default: "PR opened automatically"
+    default: "PR opened automatically from branch $${{ github.ref_name }} to branch ${{ inputs.branch-target }}"
   body:
     description: the body of your pull request
     required: false
