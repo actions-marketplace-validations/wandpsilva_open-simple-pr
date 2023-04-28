@@ -7,16 +7,19 @@ This is a simple action to create a pull request.
 ## `branch`
 
 **Required** 
+
 The branch target for the pull request.
 
 ## `title`
 
 **Optional** 
+
 The title of the pull request.
 
 ## `body`
 
 **Optional** 
+
 The body of the pull request.
 
 
