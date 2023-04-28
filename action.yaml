@@ -14,7 +14,7 @@ inputs:
   title:
     description: title of your pull request
     required: false
-    default: "PR from ${{ inputs.branch }} to main"
+    default: "PR from ${{ github.ref }} to main"
   body:
     description: the body of your pull request
     required: false
