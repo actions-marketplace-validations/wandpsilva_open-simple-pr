@@ -4,11 +4,17 @@ This is a simple action to create a pull request.
 
 ## Inputs
 
-## `branch`
+## `branch-origin`
 
 **Required** 
 
-The branch target for the pull request.
+The branch origin of the pull request.
+
+## `branch-target`
+
+**Required** 
+
+The target branch for the pull request.
 
 ## `title`
 
@@ -27,6 +33,7 @@ The body of the pull request.
 
     uses: wandpsilva/open-pr@master
     with:
-      branch: 'develop'
+      branch-origin: 'develop'
+      branch-target: 'main'
       title: 'my pull request'
       body: 'body of my pull request'

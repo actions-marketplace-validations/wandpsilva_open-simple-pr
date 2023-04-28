@@ -3,10 +3,14 @@ author: Wanderlucio P Silva
 description: This action open a pull request for a specified branch
 
 inputs:
-  branch:
-    description: the branch which will receive de PR
+  branch-origin:
+    description: the branch with the code you want to merge
     required: true
     default: teste
+  branch-target:
+    description: the branch which will receive de merge
+    required: true
+    default: main
   title:
     description: title of your pull request
     required: false
@@ -21,7 +25,7 @@ runs:
   steps:
     - env:
         GH_TOKEN: ${{ github.token }}
-      run: gh pr create --title ${{ inputs.title }} --body ${{ inputs.body }} --head ${{ inputs.branch }} --base main
+      run: gh pr create --title ${{ inputs.title }} --body ${{ inputs.body }} --head ${{ inputs.branch-origin }} --base ${{ inputs.branch-target }}
       shell: bash
     - run: "echo this action is running on branch: ${{ github.ref_name }}"
       shell: bash
