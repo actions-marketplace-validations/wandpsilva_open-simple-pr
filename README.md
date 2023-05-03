@@ -1,39 +1,40 @@
-# Composite action
+# wandpsilva/simple-open-pr action
 
-This is a simple action to create a pull request.
+This is a simple action to open pull requests.
 
-## Inputs
+# Inputs
 
-## `branch-origin`
+# `branch-origin`
 
 **Required** 
 
 The branch origin of the pull request.
 
-## `branch-target`
+# `target-branch`
 
 **Required** 
 
 The target branch for the pull request.
 
-## `title`
+# `title`
 
 **Optional** 
 
 The title of the pull request.
 
-## `body`
+# `body`
 
 **Optional** 
 
 The body of the pull request.
 
 
-## Example usage
-
+# Usage
+```yaml
     uses: wandpsilva/open-pr@master
     with:
       branch-origin: 'develop'
       branch-target: 'main'
       title: 'my pull request'
       body: 'body of my pull request'
+```
