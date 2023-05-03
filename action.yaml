@@ -23,12 +23,13 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: informations
+      run: echo "please, note that this action won't run on branch main"
+      shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
+      if: ${{ github.ref_name != 'main' && github.ref_name != 'master' }}
       run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ inputs.target-branch }}
-      if: ${{ github.ref_name != 'main' }}
-      shell: bash
-    - run: "echo this action is running on branch: ${{ github.ref_name }}"
       shell: bash
     - run: "echo pull request opened with success"
       shell: bash
