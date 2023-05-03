@@ -27,7 +27,7 @@ runs:
         GH_TOKEN: ${{ github.token }}
       run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ inputs.target-branch }}
       shell: bash
-    - run: "echo this action is running on branch: ${{ github.ref_name }}"
+    - run: "echo -n this action is running on branch: ${{ github.ref_name }}"
       shell: bash
     - run: "echo pull request opened with success"
       shell: bash
