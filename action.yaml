@@ -26,6 +26,7 @@ runs:
     - env:
         GH_TOKEN: ${{ github.token }}
       run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ inputs.target-branch }}
+      if: ${{ github.ref_name != 'main' }}
       shell: bash
     - run: "echo this action is running on branch: ${{ github.ref_name }}"
       shell: bash
