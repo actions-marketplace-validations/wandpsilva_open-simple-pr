@@ -1,6 +1,6 @@
 # wandpsilva/simple-open-pr action
 
-This is a simple action to open pull requests automatically.
+Simple action to open pull requests automatically.
 
 # **Inputs**
 
