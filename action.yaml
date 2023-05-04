@@ -1,12 +1,15 @@
 name: open PR
 author: Wanderlucio P Silva
-description: This action open a pull request for a specified branch
+description: Github Action to open pull requests
+branding:
+  icon: 'cpu'
+  color: 'green'
 
 inputs:
   branch-origin:
     description: the branch with the code you want to merge
     required: true
-    default: teste
+    default: develop
   target-branch:
     description: the branch which will receive de merge
     required: true
@@ -14,11 +17,11 @@ inputs:
   title:
     description: title of your pull request
     required: false
-    default: "PR opened automatically from branch ${{ github.ref_name }}"
+    default: "PR from branch ${{ github.ref_name }}"
   body:
     description: the body of your pull request
     required: false
-    default: "This PR was opened automatically by wandpsilva/open-pr action"
+    default: "Opened automatically by github action wandpsilva/open-pr action"
 
 runs:
   using: composite
@@ -33,8 +36,3 @@ runs:
       shell: bash
     - run: "echo pull request opened with success"
       shell: bash
-
-
-branding:
-  icon: 'cpu'
-  color: 'green'

@@ -1,6 +1,6 @@
 # wandpsilva/simple-open-pr action
 
-This is a simple action to open pull requests.
+This is a simple action to open pull requests automatically.
 
 # **Inputs**
 
@@ -8,13 +8,13 @@ This is a simple action to open pull requests.
 
 **Required** 
 
-The branch origin of the pull request.
+The branch origin of the pull request, if not specified, the branch calling this action will be assumed.
 
 ## `target-branch`
 
 **Required** 
 
-The target branch for the pull request.
+The target branch for the pull request, if not specified, the branch main will be assumed.
 
 ## `title`
 
