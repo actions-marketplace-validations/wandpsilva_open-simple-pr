@@ -31,7 +31,7 @@ The body of the pull request.
 
 # **Usage**
 ```yaml
-    uses: wandpsilva/open-simple-pr@master
+    uses: wandpsilva/open-simple-pr@v1
     with:
       branch-origin: 'develop'
       target-branch: 'main'
@@ -41,7 +41,7 @@ The body of the pull request.
 
 you can also specify the branch-origin by using github actions environment variables:
 ```yaml
-    uses: wandpsilva/open-simple-pr@master
+    uses: wandpsilva/open-simple-pr@v1
     with:
       branch-origin: ${{ github.ref_name }}
       target-branch: 'main'
