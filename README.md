@@ -40,7 +40,7 @@ The body of the pull request.
       body: 'body of my pull request'
 ```
 
-you can also specify the branch-origin by using github actions environment variables:
+you can specify the branch-origin by using github actions environment variables:
 ```yaml
     uses: actions/checkout@v3
     uses: wandpsilva/open-simple-pr@v1
@@ -49,6 +49,12 @@ you can also specify the branch-origin by using github actions environment varia
       target-branch: 'main'
       title: 'my pull request'
       body: 'body of my pull request'
+```
+
+you can also omit all the inputs fields:
+```yaml
+    uses: actions/checkout@v3
+    uses: wandpsilva/open-simple-pr@v1
 ```
 
 **Do not forget to checkout your code before calling this action by using actions/checkout action.**
