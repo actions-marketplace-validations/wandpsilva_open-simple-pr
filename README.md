@@ -48,3 +48,5 @@ you can also specify the branch-origin by using github actions environment varia
       title: 'my pull request'
       body: 'body of my pull request'
 ```
+
+**Do not forget to checkout your code before calling this action by using actions/checkout action.**
