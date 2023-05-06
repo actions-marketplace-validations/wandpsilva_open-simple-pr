@@ -8,8 +8,7 @@ branding:
 inputs:
   branch-origin:
     description: the branch with the code you want to merge
-    required: true
-    default: develop
+    required: false
   target-branch:
     description: the branch which will receive de merge
     required: true
@@ -31,8 +30,13 @@ runs:
       shell: bash
     - env:
         GH_TOKEN: ${{ github.token }}
-      if: ${{ github.ref_name != 'main' && github.ref_name != 'master' }}
+      if: ${{ github.ref_name != 'main' && github.ref_name != 'master' && ${{ inputs.branch-origin != "" }} }}
       run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ inputs.target-branch }}
+      shell: bash
+    - env:
+        GH_TOKEN: ${{ github.token }}
+      if: ${{ github.ref_name != 'main' && github.ref_name != 'master' && ${{ inputs.branch-origin = "" }} }}
+      run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base ${{ github.ref_name }}
       shell: bash
     - run: "echo pull request opened with success"
       shell: bash
