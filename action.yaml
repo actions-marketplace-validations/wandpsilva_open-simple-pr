@@ -1,4 +1,4 @@
-name: open PR
+name: Open Simple Pull Request
 author: Wanderlucio P Silva
 description: Github Action to open pull requests
 branding:
