@@ -6,13 +6,13 @@ Simple action to open pull requests automatically.
 
 ## `branch-origin`
 
-**Required** 
+**Optional** 
 
 The branch origin of the pull request, if not specified, the branch calling this action will be assumed.
 
 ## `target-branch`
 
-**Required** 
+**Optional** 
 
 The target branch for the pull request, if not specified, the branch main will be assumed.
 
@@ -34,7 +34,17 @@ The body of the pull request.
     uses: wandpsilva/open-simple-pr@master
     with:
       branch-origin: 'develop'
-      branch-target: 'main'
+      target-branch: 'main'
+      title: 'my pull request'
+      body: 'body of my pull request'
+```
+
+you can also specify the branch-origin by using github actions environment variables:
+```yaml
+    uses: wandpsilva/open-simple-pr@master
+    with:
+      branch-origin: ${{ github.ref_name }}
+      target-branch: 'main'
       title: 'my pull request'
       body: 'body of my pull request'
 ```
