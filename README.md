@@ -51,7 +51,7 @@ you can specify the branch-origin by using github actions environment variables:
       body: 'body of my pull request'
 ```
 
-you can also omit all the inputs fields:
+you can also omit all the inputs:
 ```yaml
     uses: actions/checkout@v3
     uses: wandpsilva/open-simple-pr@v1
