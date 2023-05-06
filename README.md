@@ -31,6 +31,7 @@ The body of the pull request.
 
 # **Usage**
 ```yaml
+    uses: actions/checkout@v3
     uses: wandpsilva/open-simple-pr@v1
     with:
       branch-origin: 'develop'
@@ -41,6 +42,7 @@ The body of the pull request.
 
 you can also specify the branch-origin by using github actions environment variables:
 ```yaml
+    uses: actions/checkout@v3
     uses: wandpsilva/open-simple-pr@v1
     with:
       branch-origin: ${{ github.ref_name }}
