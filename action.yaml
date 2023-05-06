@@ -36,7 +36,7 @@ runs:
     - env:
         GH_TOKEN: ${{ github.token }}
       if: ${{ github.ref_name != 'main' && github.ref_name != 'master' && inputs.branch-origin == '' }}
-      run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ inputs.branch-origin }} --base "${{ github.ref_name }}"
+      run: gh pr create --title "${{ inputs.title }}" --body "${{ inputs.body }}" --head ${{ github.ref_name }} --base ${{ inputs.target-branch }}
       shell: bash
     - run: "echo pull request opened with success"
       shell: bash
